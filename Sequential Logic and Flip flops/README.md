@@ -2,10 +2,10 @@
 
 # Table of Contents
 
-1. [Introduction](#introduction)
-2. [Memory Devices](#memory-devices)
+1. [Introduction](#Introduction)
+2. [Memory Devices](#Memory-Devices)
 3. [Sequential Logic](#sequential-logic)
-    - [Time Matters](#time-matters)
+    - [Time Matters](#Time-Matters)
     - [Flip-Flops](#flip-flops)
     - [Combinational and Sequential Logic](#combinational-and-sequential-logic)
 4. [Specification](#specification)
