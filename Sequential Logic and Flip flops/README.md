@@ -2,10 +2,10 @@
 
 # Table of Contents
 
-1. [Introduction](##introduction)
-2. [Memory Devices](##memory-devices)
-3. [Sequential Logic](##sequential-logic)
-    - [Time Matters](##time-matters)
+1. [Introduction](#introduction)
+2. [Memory Devices](#memory-devices)
+3. [Sequential Logic](#sequential-logic)
+    - [Time Matters](#time-matters)
     - [Flip-Flops](#flip-flops)
     - [Combinational and Sequential Logic](#combinational-and-sequential-logic)
 4. [Specification](#specification)
@@ -38,7 +38,7 @@ Before setting out to build these chips, though, we’ll present a methodology a
 
 In chapters 1 and 2, we focused on chips rooted in classical logic, which is not **time-dependent**. To create memory devices, we must enhance our gate logic so that it can respond not just to input changes but also to the **rhythmic ticking of a clock**. Much like how we remember the meaning of the word "dog" from the moment we initially stored it in our memory, our computer architecture needs to incorporate a temporal dimension. This involves constructing tools that can **manage time using Boolean functions**, allowing us to maintain and handle states over time.
 
-## Time-Matters
+### Time-Matters
 
 In **Nand to Tetris** so far, we've assumed that chips **respond to their inputs instantaneously**. For instance, you input 7, 2, and "subtract" into the **ALU**, and it immediately outputs 5. However, in reality, there are always **delays in the outputs for at least two reasons**. First, the inputs of the **chips don't magically appear**; they come from the **outputs of other chips**, and this travel takes time. Second, the **computations chips perform also take time**, and the **more complex a chip's logic**, the longer it takes for the chip's **outputs to be fully generated**.
 
@@ -54,7 +54,7 @@ So, we choose a chunk length that's a bit longer than the longest delay in the s
 
 In each part of the computer, this signal helps decide when to change to a new state and when to give an output. This way, everything in the computer works together smoothly, even though the world is always changing.
 
-## Flip-Flops
+### Flip-Flops
 
 Memory chips are created to hold onto or store information for a period. To make this storing process happen, we use small components known as **flip-flop gates**. There are various types of these gates, and in the Nand to Tetris project, we specifically use a gate called a **data flip-flop** or **DFF**. This #DFF has a setup with a single-bit data input and a single-bit data output, as illustrated at the top of Figure 3.3.
 
@@ -71,7 +71,7 @@ At the end of each clock cycle, all the #DFF gates in the computer update their 
 To manage this **time-dependent operation**, hardware implementations use a **dedicated clock bus** that distributes the master clock signal to all the #DFF gates simultaneously. Hardware simulators achieve the same effect through software emulation. Specifically, the Nand to Tetris hardware simulator provides a **clock icon** that lets users manually advance the clock and also offers **"tick" and "tock"** commands that can be scripted for testing purposes.
 ![](dffmux.png)
 
-## Combinational and Sequential Logic
+### Combinational and Sequential Logic
 
 In the previous chapters (1 and 2), all the chips we developed, from basic logic gates to the **ALU**, were designed to react only to changes happening in the **current clock cycle**. These chips are called "**time-independent**" or "**combinational**" chips. The term "**combinational**" refers to the fact that these chips respond solely to different combinations of input values without considering the passage of time.
 
@@ -85,7 +85,7 @@ Imagine you're using a computer, and you want it to add two numbers, let's call 
 
 So, when we tell the computer to add x and y, we know that by the end of this time snapshot (cycle), the computer will give us the correct answer. We don't worry about the small delays in between. It's like conducting an orchestra and making sure all the musicians play in harmony even if they start at slightly different times. This trick of using cycles and making sure they're long enough for everything to happen is what keeps all the computer parts working together like a well-orchestrated team. We'll dive into this more when we talk about building the whole computer system in chapter 5.
 
-# Specification
+## Specification
 
 Now, we're going to talk about the memory chips that computers use:
 
@@ -96,7 +96,7 @@ Now, we're going to talk about the memory chips that computers use:
 
 We'll keep it simple and just talk about what these chips can do and how they connect with other parts of the computer. The technical details of how they work will be discussed later in the Implementation section.
 
-## Data Flip-Flop
+### Data Flip-Flop
 
 Imagine a tiny device in a computer called a **Data Flip-Flop** (**DFF**). It's a bit like a switch with a memory. It has four things:
 
@@ -107,7 +107,7 @@ Imagine a tiny device in a computer called a **Data Flip-Flop** (**DFF**). It's 
 
 This simple device might not seem like much, but it's really important because we can use it to build more complex things like registers (which are like tiny storage spaces in a computer). We'll learn more about registers next.
 
-## Registers
+### Registers
 
 1. **Bit:** Think of it as a tiny memory chip in a computer. It can remember just one piece of information, either a 0 or a 1.
 2. **Register:** This is like a bigger version of the Bit. It can remember a whole bunch of 0s and 1s, up to 16 of them.
