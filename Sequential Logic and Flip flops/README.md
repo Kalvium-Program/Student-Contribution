@@ -1,3 +1,5 @@
+# Chapter 3: Memory Chips and Sequential Logic
+
 In Chapter 2, we explored how **logic gates can represent numbers and perform simple arithmetic operations**. Now, our focus shifts to using logic gates for **storing values over time**, specifically, how we can make a variable like "x" hold a value and keep it until we replace it with another value. To achieve this, we will introduce a new family of **memory chips**.
 
 Up until now, the chips we built in Chapters 1 and 2, including the #ALU, were time-independent or combinational. They respond instantly to various input combinations, with the only delay being the time required for their internal computations. However, in this chapter, we introduce and **construct sequential chips**. Unlike combinational chips, sequential chips not only consider the current inputs but also **depend on inputs and outputs processed in previous time intervals.**
