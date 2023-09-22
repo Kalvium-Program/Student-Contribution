@@ -34,7 +34,7 @@ The critical role of the DFF is evident in **Figure 3.1**, where it forms the ba
 
 Before setting out to build these chips, though, we’ll present a methodology and tools that enable modeling the progression of time and maintaining state over time.
 
-## Sequential_Logic
+## Sequential Logic
 
 In chapters 1 and 2, we focused on chips rooted in classical logic, which is not **time-dependent**. To create memory devices, we must enhance our gate logic so that it can respond not just to input changes but also to the **rhythmic ticking of a clock**. Much like how we remember the meaning of the word "dog" from the moment we initially stored it in our memory, our computer architecture needs to incorporate a temporal dimension. This involves constructing tools that can **manage time using Boolean functions**, allowing us to maintain and handle states over time.
 
