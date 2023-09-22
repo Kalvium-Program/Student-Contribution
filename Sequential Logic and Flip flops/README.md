@@ -13,7 +13,9 @@ Computer programs rely on **variables**, **arrays**, and **objects** to manage a
 To address this challenge, we introduce a **clock** and an **elementary time-dependent logic gate** known as the **data flip-flop (DFF)**. The #DFF can transition between **two stable states**, representing 0 and 1, making it the foundational building block for all memory devices. Despite its central role, DFFs often remain **low-profile**. Unlike **registers**, **RAM** **devices**, and **counters**, which have **prominent roles** in computer architecture, DFFs are used implicitly as essential components deeply embedded within other memory devices.
 
 The critical role of the DFF is evident in **Figure 3.1**, where it forms the basis of the memory hierarchy we are about to construct. We will demonstrate how DFFs can create **1-bit registers** and how multiple registers can be combined to form **n-bit registers**. Additionally, we will develop a **RAM** device containing numerous registers and establish a method for addressing and instantaneously accessing any selected register from the RAM.
+
 ![](DFF.png)
+
 Before setting out to build these chips, though, we’ll present a methodology and tools that enable modeling the progression of time and maintaining state over time.
 
 ## Sequential Logic
@@ -25,7 +27,9 @@ In chapters 1 and 2, we focused on chips rooted in classical logic, which is not
 In **Nand to Tetris** so far, we've assumed that chips **respond to their inputs instantaneously**. For instance, you input 7, 2, and "subtract" into the **ALU**, and it immediately outputs 5. However, in reality, there are always **delays in the outputs for at least two reasons**. First, the inputs of the **chips don't magically appear**; they come from the **outputs of other chips**, and this travel takes time. Second, the **computations chips perform also take time**, and the **more complex a chip's logic**, the longer it takes for the chip's **outputs to be fully generated**.
 
 Therefore, time is a crucial factor that needs to be considered. In Figure 3.2, time is often depicted as a continuous, forward-moving arrow. However, this continuous view of time is **too abstract for computer scientists**. Instead, we prefer to break **time into discrete**, **fixed-length intervals** called **cycles**. These cycles are unable to divide or separate, and changes in the system only occur during transitions between cycles. Within a cycle, the system remains static.
+
 ![](time.png)
+
 The world is always changing, but when we work with computers, we choose to look at time in chunks. We only care about what's happening at the end of each chunk of time, and we don't pay attention to what's happening in between. This way of looking at time helps in two ways when designing computer systems. First, it helps us deal with the **unpredictability of communication** and **processing delays**. Second, it helps us **coordinate the actions of different parts** of a computer system.
 
 For example, imagine we're using a "**Not gate**" in a computer, (**Fig 3.2**). When we give it the number 1 as input, it takes a little time to process and give us an output of 0. But because our time chunks are designed to be longer than this delay, when we check the output at the end of a chunk, it already shows 0. We don't see the delay; it seems like the gate instantly turned 1 into 0. To make this work, we need to make sure our time chunks are long enough to cover any possible delays in the system. But we also want them to be as **short as possible** to make the computer **faster**.
@@ -37,7 +41,9 @@ In each part of the computer, this signal helps decide when to change to a new s
 ### Flip-Flops
 
 Memory chips are created to hold onto or store information for a period. To make this storing process happen, we use small components known as **flip-flop gates**. There are various types of these gates, and in the Nand to Tetris project, we specifically use a gate called a **data flip-flop** or **DFF**. This #DFF has a setup with a single-bit data input and a single-bit data output, as illustrated at the top of Figure 3.3.
+
 ![](flip.png)
+
 Additionally, the **DFF** includes a clock input that receives its signal from the **master clock**. When you combine the data input and the clock input, it allows the **DFF** to carry out a straightforward time-based action, where the output at the current time, out(t), equals the input value at the previous time, in(t-1).
 
 Here, "**in**" and "**out**" represent the values going into and coming out of the gate. "**t**" stands for the **current time unit**, and we'll use the terms "**time unit**" and "**cycle**" interchangeably from now on. Don't concern yourself with the technical details of how this behavior is achieved. For now, just notice that at the conclusion of each **time unit**, the DFF provides the output that corresponds to the **input value** from the **previous time unit**.
@@ -54,7 +60,9 @@ To manage this **time-dependent operation**, hardware implementations use a **de
 In the previous chapters (1 and 2), all the chips we developed, from basic logic gates to the **ALU**, were designed to react only to changes happening in the **current clock cycle**. These chips are called "**time-independent**" or "**combinational**" chips. The term "**combinational**" refers to the fact that these chips respond solely to different combinations of input values without considering the passage of time.
 
 On the other hand, there are chips designed to respond not only to changes in the **current time** unit but also to changes that occurred in **previous time units**. These are known as "**sequential**" or "**clocked**" chips. The core component of sequential logic is the DFF (**data flip-flop**), and any chip that includes a DFF, either directly or indirectly, is considered sequential. Figure 3.4 illustrates a typical configuration of sequential logic.
+
 ![](seq.png)
+
 In this configuration, you'll find one or more chips that include DFF components, either **directly** or **indirectly**. As depicted in the figure, these sequential chips may also interact with combinational chips. The feedback loop in sequential chips allows them to take into account inputs and outputs from the **previous time unit**. In combinational chips, where time isn't considered, introducing **feedback loops** can be problematic. It could create a situation where the chip's output depends on its input, which in turn depends on the output, creating a circular loop. However, this issue can be resolved by using a DFF gate in the feedback loop. The DFF introduces a natural time delay, ensuring that the output at time "**t**" doesn't depend on itself but rather on the output at time "**t-1.**"
 
 Imagine you're using a computer, and you want it to add two numbers, let's call them **x** and **y**. But here's the catch: x is stored in one part of the computer, and y is stored in a different part, a bit far away. Now, because of how computer parts are placed and how signals travel, it might take a bit longer for the computer to get the information about x and y. So, when the computer starts adding them up, it might not get the **right answer immediately**. It's like trying to listen to two musicians play in sync when they're in different rooms. But here's the clever part: In a computer, we use these **time snapshots** called **cycles**. We make sure that one cycle is long enough for the information (x and y) to travel from one part of the computer to another and for the computer to finish its calculations.
@@ -92,6 +100,7 @@ This simple device might not seem like much, but it's really important because w
    So, Bit remembers just one number, while Register can remember up to 16 numbers. That's what makes them useful in a computer.
 
 ![](reg.png)
+
 **Single-Bit Register (Bit):** Think of it as a small box that can remember one number (0 or 1). It can do two things: - You can put a number (0 or 1) inside it. - You can tell it to remember what's inside.
 As long as you don't tell it to change, it will keep remembering the same number.
 
