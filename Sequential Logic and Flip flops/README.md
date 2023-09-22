@@ -38,7 +38,7 @@ Before setting out to build these chips, though, we’ll present a methodology a
 
 In chapters 1 and 2, we focused on chips rooted in classical logic, which is not **time-dependent**. To create memory devices, we must enhance our gate logic so that it can respond not just to input changes but also to the **rhythmic ticking of a clock**. Much like how we remember the meaning of the word "dog" from the moment we initially stored it in our memory, our computer architecture needs to incorporate a temporal dimension. This involves constructing tools that can **manage time using Boolean functions**, allowing us to maintain and handle states over time.
 
-## Time_Matters
+## Time-Matters
 
 In **Nand to Tetris** so far, we've assumed that chips **respond to their inputs instantaneously**. For instance, you input 7, 2, and "subtract" into the **ALU**, and it immediately outputs 5. However, in reality, there are always **delays in the outputs for at least two reasons**. First, the inputs of the **chips don't magically appear**; they come from the **outputs of other chips**, and this travel takes time. Second, the **computations chips perform also take time**, and the **more complex a chip's logic**, the longer it takes for the chip's **outputs to be fully generated**.
 
