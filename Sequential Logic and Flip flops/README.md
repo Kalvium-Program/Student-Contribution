@@ -12,7 +12,7 @@
     - [Data Flip-Flop](#data-flip-flop)
     - [Registers](#registers)
 
-# Introduction
+## Introduction
 
 In Chapter 2, we explored how **logic gates can represent numbers and perform simple arithmetic operations**. Now, our focus shifts to using logic gates for **storing values over time**, specifically, how we can make a variable like "x" hold a value and keep it until we replace it with another value. To achieve this, we will introduce a new family of **memory chips**.
 
@@ -22,7 +22,7 @@ Understanding time is crucial for **sequential chips**. It involves the concepts
 
 It starts with an introduction to **memory devices** from a user's perspective. Then, it delves into sequential logic, which will be employed to create **time-dependent chips**. The chapter will proceed to construct various memory devices such as registers, **RAM** (**Random Access Memory**) devices, and counters. Collectively, these memory components, in combination with the arithmetic devices developed in Chapter 2, form the essential chips required to build a complete and versatile computer system. This computer system challenge will be explored further in Chapter 5.
 
-# Memory_Devices
+## Memory_Devices
 
 Computer programs rely on **variables**, **arrays**, and **objects** to manage and store data over time. Hardware systems facilitate this capability by **providing memory devices** capable of retaining data states. Human memory, which is electro-chemical in nature, allows us to remember things over time effortlessly. However, implementing this ability in classical logic, which lacks awareness of time and state, is challenging. Therefore, we need to develop a method to model the passage of time and imbue logic gates with the capacity to maintain state and respond to time-related changes.
 
