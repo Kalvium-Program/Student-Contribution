@@ -60,7 +60,7 @@ Memory chips are created to hold onto or store information for a period. To make
 
 ![](flip.png)
 
-Additionally, the **DFF** includes a clock input that receives its signal from the **master clock**. When you combine the data input and the clock input, it allows the **DFF** to carry out a straightforward time-based action, where the output at the current time, out(t), equals the input value at the previous time, in(t-1).
+Additionally, the **DFF** includes a clock input that receives its signal from the **master clock** (is something where every gate will get clock input). When you combine the data input and the clock input, it allows the **DFF** to carry out a straightforward time-based action, where the output at the current time, out(t), equals the input value at the previous time, in(t-1).
 
 Here, "**in**" and "**out**" represent the values going into and coming out of the gate. "**t**" stands for the **current time unit**, and we'll use the terms "**time unit**" and "**cycle**" interchangeably from now on. Don't concern yourself with the technical details of how this behavior is achieved. For now, just notice that at the conclusion of each **time unit**, the DFF provides the output that corresponds to the **input value** from the **previous time unit**.
 
