@@ -1,5 +1,19 @@
 # Chapter 3: Memory Chips and Sequential Logic
 
+# Table of Contents
+
+1. [Introduction](#introduction)
+2. [Memory Devices](#memory-devices)
+3. [Sequential Logic](#sequential-logic)
+    - [Time Matters](#time-matters)
+    - [Flip-Flops](#flip-flops)
+    - [Combinational and Sequential Logic](#combinational-and-sequential-logic)
+4. [Specification](#specification)
+    - [Data Flip-Flop](#data-flip-flop)
+    - [Registers](#registers)
+
+# Introduction
+
 In Chapter 2, we explored how **logic gates can represent numbers and perform simple arithmetic operations**. Now, our focus shifts to using logic gates for **storing values over time**, specifically, how we can make a variable like "x" hold a value and keep it until we replace it with another value. To achieve this, we will introduce a new family of **memory chips**.
 
 Up until now, the chips we built in Chapters 1 and 2, including the #ALU, were time-independent or combinational. They respond instantly to various input combinations, with the only delay being the time required for their internal computations. However, in this chapter, we introduce and **construct sequential chips**. Unlike combinational chips, sequential chips not only consider the current inputs but also **depend on inputs and outputs processed in previous time intervals.**
@@ -8,7 +22,7 @@ Understanding time is crucial for **sequential chips**. It involves the concepts
 
 It starts with an introduction to **memory devices** from a user's perspective. Then, it delves into sequential logic, which will be employed to create **time-dependent chips**. The chapter will proceed to construct various memory devices such as registers, **RAM** (**Random Access Memory**) devices, and counters. Collectively, these memory components, in combination with the arithmetic devices developed in Chapter 2, form the essential chips required to build a complete and versatile computer system. This computer system challenge will be explored further in Chapter 5.
 
-# Memory Devices
+# Memory_Devices
 
 Computer programs rely on **variables**, **arrays**, and **objects** to manage and store data over time. Hardware systems facilitate this capability by **providing memory devices** capable of retaining data states. Human memory, which is electro-chemical in nature, allows us to remember things over time effortlessly. However, implementing this ability in classical logic, which lacks awareness of time and state, is challenging. Therefore, we need to develop a method to model the passage of time and imbue logic gates with the capacity to maintain state and respond to time-related changes.
 
@@ -20,11 +34,11 @@ The critical role of the DFF is evident in **Figure 3.1**, where it forms the ba
 
 Before setting out to build these chips, though, we’ll present a methodology and tools that enable modeling the progression of time and maintaining state over time.
 
-# Sequential Logic
+# Sequential_Logic
 
 In chapters 1 and 2, we focused on chips rooted in classical logic, which is not **time-dependent**. To create memory devices, we must enhance our gate logic so that it can respond not just to input changes but also to the **rhythmic ticking of a clock**. Much like how we remember the meaning of the word "dog" from the moment we initially stored it in our memory, our computer architecture needs to incorporate a temporal dimension. This involves constructing tools that can **manage time using Boolean functions**, allowing us to maintain and handle states over time.
 
-## Time Matters
+## Time_Matters
 
 In **Nand to Tetris** so far, we've assumed that chips **respond to their inputs instantaneously**. For instance, you input 7, 2, and "subtract" into the **ALU**, and it immediately outputs 5. However, in reality, there are always **delays in the outputs for at least two reasons**. First, the inputs of the **chips don't magically appear**; they come from the **outputs of other chips**, and this travel takes time. Second, the **computations chips perform also take time**, and the **more complex a chip's logic**, the longer it takes for the chip's **outputs to be fully generated**.
 
