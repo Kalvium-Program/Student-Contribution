@@ -36,7 +36,7 @@ It's important to note that the syntax of an **assembly language** is closely ti
 In what comes next, let's suppose that the computer's processor has a set of registers named **R0, R1, R2, and so on**. The exact number and type of these registers don't matter for our current discussion.
 
 Arithmetic and logical operations: Every machine language includes instructions for **performing basic arithmetic operations** like **addition** and **subtraction**, as well as fundamental logical operations like **And**, **Or**, and **Not**. Here are some examples:
-![](Screenshot 2023-09-22 at 10.46.52 AM.png.png)
+![](1.png)
 
 For these symbolic instructions to actually work on a computer, they need to be translated into **binary code**. This translation is carried out by a program called an **assembler**, which we'll create in **Chapter 6**. For now, let's assume that we have access to this assembler and can use it as needed.
 
@@ -52,7 +52,7 @@ Now, imagine we want to set the values of **fifty memory locations**, ranging fr
   
 ### Flow control: 
 In computer programs, instructions are usually executed sequentially, one after the other. However, programs often need to jump to different locations in certain **conditions** or **unconditionally**. To enable this branching behavior, machine languages include various forms of instructions for both conditional and unconditional jumps, along with label declarations that indicate where these jumps should go. Below, you can see an example of how machine language handles a basic branching action:
-![](Screenshot 2023-09-22 at 11.35.45 AM.png)
+![](2.png)
 ### Symbols: 
 In the previous example (figure 4.1), both versions of the code were written in **assembly language**, but they needed to be translated into binary code before execution. Interestingly, both versions achieved the same logic. However, the version that used symbolic references was much easier to write, debug, and maintain.
 
